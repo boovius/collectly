@@ -1,0 +1,28 @@
+#welcome {
+  h2 {
+    margin-top: 10%;
+    text-align: center;
+  }
+
+  .login-container {
+    width: 50%;
+    height: 400px;
+    margin: auto;
+    background: #ddd;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+  }
+
+  .sign-up, .sign-in {
+    position: relative;
+    top: 40%;
+    left: 32%;
+    margin: 20px;
+  }
+
+  .sign-up:hover, .sign-in:hover {
+    color: #eee;
+    background-color: #aaa;
+  }
+}

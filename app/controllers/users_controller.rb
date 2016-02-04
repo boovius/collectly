@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_filter :authorize
+
   def new
   end
 
@@ -15,7 +17,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.requrie(:user).permit(:name,
+    params.require(:user).permit(:name,
                                  :email,
                                  :password,
                                  :password_confirmation)

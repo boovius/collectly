@@ -1,12 +1,18 @@
-%h1 Sign Yo Self Up!
+.container
+  %h1 Sign Yo Self Up!
 
-=form_for :user, url: 'users' do |f|
-  Name:
-  =f.text_field :name
-  Email:
-  =f.text_field :name
-  Password:
-  =f.text_field :password
-  Password Confirmation:
-  =f.text_field :password_confirmation
-  =f.submit
+  =form_for :user, url: 'users' do |f|
+    %ul
+      %li
+        Name:
+        =f.text_field :name
+      %li
+        Email:
+        =f.text_field :name
+      %li
+        Password:
+        =f.password_field :password
+      %li
+        Password Confirmation:
+        =f.password_field :password_confirmation
+    =f.submit
