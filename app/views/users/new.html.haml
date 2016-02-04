@@ -1,0 +1,12 @@
+%h1 Sign Yo Self Up!
+
+=form_for :user, url: 'users' do |f|
+  Name:
+  =f.text_field :name
+  Email:
+  =f.text_field :name
+  Password:
+  =f.text_field :password
+  Password Confirmation:
+  =f.text_field :password_confirmation
+  =f.submit
