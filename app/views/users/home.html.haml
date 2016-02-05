@@ -1,1 +1,13 @@
-hello #{current_user.name}
+#user-home
+  .container
+    %h1 Welcome #{current_user.name}
+    %ul
+      %li
+        %a.btn(href='/artists')
+          Artists
+      %li
+        %a.btn(href='/albums')
+          Albums
+      %li
+        %a.btn(href='/songs')
+          Songs
