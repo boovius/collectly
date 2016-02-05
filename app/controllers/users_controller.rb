@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_filter :authorize
+  skip_before_filter :authorize, only: [:new, :create]
 
   def new
   end
@@ -12,6 +12,9 @@ class UsersController < ApplicationController
     else
       redirect_to '/signup'
     end
+  end
+
+  def home
   end
 
   private
