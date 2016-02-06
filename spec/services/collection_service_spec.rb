@@ -17,7 +17,22 @@ RSpec.describe CollectionService do
         expect(Song.all.length).to eq 1
         expect(Song.first.title).to eq('let it be')
       end
+
+      context 'when song title already exists' do
+        before do
+          Song.create(title: hash[:song])
+          expect(Song.all.length).to eq 1
+
+          subject
+        end
+
+        it 'does not add the duplicate song' do
+          expect(Song.all.length).to eq 1
+          expect(Song.first.title).to eq('let it be')
+        end
+      end
     end
+
 
     context 'given a hash with a song title' do
 
