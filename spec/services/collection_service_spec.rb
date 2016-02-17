@@ -8,7 +8,7 @@ RSpec.describe CollectionService do
       let(:hash) {{
         song: 'Across the Universe',
         album: '',
-        artists: '',
+        artist: '',
       }}
 
       it 'adds the song' do
@@ -37,7 +37,7 @@ RSpec.describe CollectionService do
       let(:hash) {{
         song: 'Across the Universe',
         album: 'let it be',
-        artists: '',
+        artist: '',
       }}
 
       it 'adds the song and album' do
@@ -85,14 +85,27 @@ RSpec.describe CollectionService do
       end
     end
 
-    context 'given a hash with a song title' do
+    context 'given a hash with a song, ablum, and artist' do
 
-    end
-    context 'given a hash with a song title' do
+      let(:hash) {{
+        song: 'Across the Universe',
+        album: 'let it be',
+        artist: 'The Beatles',
+      }}
 
-    end
-    context 'given a hash with a song title' do
+      it 'adds the song and album' do
+        subject
 
+        expect(Song.all.length).to eq 1
+        expect(Song.first.title).to eq(hash[:song])
+        expect(Album.all.length).to eq 1
+        expect(Album.first.title).to eq(hash[:album])
+        expect(Song.first.album).to eq(Album.first)
+        expect(Artist.all.length).to eq 1
+        expect(Artist.first.title).to eq(hash[:artist])
+        expect(Album.first.artist).to eq(hash[:artist])
+        expect(Song.first.artist).to eq(Album.first.artist)
+      end
     end
   end
 end
