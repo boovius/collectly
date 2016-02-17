@@ -93,18 +93,22 @@ RSpec.describe CollectionService do
         artist: 'The Beatles',
       }}
 
+      let(:song) { Song.first }
+      let(:album) { Album.first }
+      let(:artist) { Artist.first }
+
       it 'adds the song and album' do
         subject
 
         expect(Song.all.length).to eq 1
-        expect(Song.first.title).to eq(hash[:song])
+        expect(song.title).to eq(hash[:song])
         expect(Album.all.length).to eq 1
-        expect(Album.first.title).to eq(hash[:album])
-        expect(Song.first.album).to eq(Album.first)
+        expect(album.title).to eq(hash[:album])
+        expect(song.album).to eq(album)
         expect(Artist.all.length).to eq 1
-        expect(Artist.first.name).to eq(hash[:artist])
-        expect(Album.first.artist).to eq(hash[:artist])
-        expect(Song.first.artist).to eq(Album.first.artist)
+        expect(artist.name).to eq(hash[:artist])
+        expect(album.artist).to eq(artist)
+        expect(song.artist).to eq(Album.first.artist)
       end
     end
   end
