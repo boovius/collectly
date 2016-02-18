@@ -1,16 +1,20 @@
 #user-home
   .container
     %h1 Welcome #{current_user.name}
-    .add_new_item
+    .add-new-item
       %h3 Add new song
       %form(action='songs' method="post")
-        %input(type="hidden" name="#{request_forgery_protection_token.to_s}" value="#{form_authenticity_token}")
-        %label song
-        %input(type='text' name='song' required='true')
-        %label album
-        %input(type='text' name='album')
-        %label artist
-        %input(type='text' name='artist')
+        .names
+          %input(type="hidden" name="#{request_forgery_protection_token.to_s}" value="#{form_authenticity_token}")
+          %label(for='song') song
+          %input(type='text' name='song' id='song' required='true')
+          %label(for='album') album
+          %input(type='text' name='album' id='album')
+          %label(for='artist') artist
+          %input(type='text' name='artist' id='artist')
+        .attrs
+          %label(for='album-image-url') add album artwork
+          %input(type='text' name='album-image-url' id='album-image-url' placeholder='http://www.pathtoimage.com')
         %button submit
     .collection
       %h3 Your Collection

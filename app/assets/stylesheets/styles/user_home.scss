@@ -1,12 +1,22 @@
 #user-home {
-  .add_new_item {
+  .add-new-item {
+    font-size: 18px;
+
     background-color: #777;
     padding: 20px;
-    width: 60%;
+    width: 70%;
     border-radius: 4px;
 
     h3 {
       margin-top: 0;
+    }
+
+    form div {
+      margin-bottom: .5em;
+    }
+
+    #album-image-url {
+      width: 50%;
     }
   }
 
