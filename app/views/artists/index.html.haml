@@ -7,6 +7,6 @@
           %li
             .artist-name #{artist.name}
             .albums
-              - artist.albums.each do |album|
+              - artist.albums.first(10).each do |album|
                 %a(href="/albums/#{album.id}")
                   .album(style="background-image: url('#{album.image_path}')")
