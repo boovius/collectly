@@ -4,6 +4,6 @@ class Song < ActiveRecord::Base
   belongs_to :album
 
   def artist
-    album.artist
+    album.artist if album.present?
   end
 end
