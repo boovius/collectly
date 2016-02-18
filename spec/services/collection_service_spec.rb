@@ -158,5 +158,56 @@ RSpec.describe CollectionService do
           'the beatles', 'tHebeAtles', 'thebeatles', 2
       end
     end
+
+    context 'album artwork' do
+      let(:hash) {{
+        song: 'Across the Universe',
+        album: 'let it be',
+        artist: 'The Beatles',
+        album_image_url: album_artwork,
+      }}
+
+      let(:song) { Song.first }
+      let(:album) { Album.first }
+      let(:artist) { Artist.first }
+
+      context 'given hash of album of artwork' do
+        let(:album_artwork) { 'https://s3.amazonaws.com/ablumpic' }
+
+        it 'adds the song and album' do
+          subject
+
+          expect(Song.all.length).to eq 1
+          expect(song.title).to eq(hash[:song])
+          expect(Album.all.length).to eq 1
+          expect(album.title).to eq(hash[:album])
+          expect(song.album).to eq(album)
+          expect(Artist.all.length).to eq 1
+          expect(artist.name).to eq(hash[:artist].downcase)
+          expect(album.artist).to eq(artist)
+          expect(song.artist).to eq(artist)
+          expect(album.image_url).to eq(album_artwork)
+        end
+      end
+
+      context 'given hash with no album artwork' do
+        let(:album_artwork) { '' }
+
+        it 'adds the song and album' do
+          subject
+
+          expect(Song.all.length).to eq 1
+          expect(song.title).to eq(hash[:song])
+          expect(Album.all.length).to eq 1
+          expect(album.title).to eq(hash[:album])
+          expect(song.album).to eq(album)
+          expect(Artist.all.length).to eq 1
+          expect(artist.name).to eq(hash[:artist].downcase)
+          expect(album.artist).to eq(artist)
+          expect(song.artist).to eq(artist)
+          expect(album.image_url).to eq('')
+        end
+      end
+    end
   end
 end
