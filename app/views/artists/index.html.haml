@@ -1,0 +1,7 @@
+#artists-index
+  .container
+    %h2 Artists
+    %ul
+      - @artists.each do |artist|
+        %a(href="artists/#{artist.id}")
+          %li.box-shadow-li #{artist.name}

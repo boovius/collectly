@@ -1,0 +1,8 @@
+#artists-show.container
+  %h3 Your albums from #{@artist.name}
+  %ul
+    - @artist.albums.each do |album|
+      %a(href="/albums/#{album.id}")
+        %li.box-shadow-li #{album.title}
+
+
