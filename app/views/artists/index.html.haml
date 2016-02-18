@@ -4,4 +4,9 @@
     %ul
       - @artists.each do |artist|
         %a(href="artists/#{artist.id}")
-          %li.box-shadow-li #{artist.name}
+          %li
+            .artist-name #{artist.name}
+            .albums
+              - artist.albums.first(10).each do |album|
+                %a(href="/albums/#{album.id}")
+                  .album(style="background-image: url('#{album.image_path}')")

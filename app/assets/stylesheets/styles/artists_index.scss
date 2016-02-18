@@ -1,3 +1,11 @@
 #artists-index {
   @include box-shadow-li(goldenrod);
+  .album {
+    @include background-image(30px, 30px);
+    display: inline-block;
+  }
+
+  .album:hover {
+    background-color: #ddd;
+  }
 }

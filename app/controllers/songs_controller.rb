@@ -14,6 +14,7 @@ class SongsController < ApplicationController
       song: params['song'],
       album: params['album'],
       artist: params['artist'],
+      album_image_url: params['album_image_url'],
     }
   end
 end

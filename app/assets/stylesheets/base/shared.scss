@@ -39,3 +39,10 @@ a {
   }
 }
 
+@mixin background-image($width, $height) {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: $width;
+  height: $height;
+}
