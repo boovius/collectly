@@ -5,7 +5,7 @@
       - @albums.each do |album|
         %a(href="albums/#{album.id}")
           %li
-            .album-title #{album.title}
-            .artist
-              %span artist:
-              #{album.artist.name}
+            .art(style="background-image: url('#{album.image_path}')")
+            .attrs
+              .album-title #{album.title}
+              .artist #{album.artist.name}

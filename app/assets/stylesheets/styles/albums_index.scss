@@ -1,11 +1,25 @@
 #albums-index {
   @include box-shadow-li(#ff4da6);
 
+  li > div {
+    display: inline-block;
+  }
+
+  .art {
+    @include background-image(30px, 30px);
+    vertical-align: top;
+  }
+
+  .attrs {
+    margin-left: 1em;
+  }
+
   .album-title {
     font-weight: bold;
   }
 
   .artist {
+    margin-left: 1em;
     font-size: .5em;
 
     span {
