@@ -1,4 +1,13 @@
 #albums-show {
+  .artist-name {
+    padding-left: .5em;
+    cursor: pointer;
+  }
+
+  .artist-name:hover {
+    box-shadow: 1px 1px 7px gray;
+  }
+
   .album {
     width: 60%;
     height: 500px;
