@@ -9,3 +9,5 @@
             .attrs
               .album-title #{album.title}
               .artist #{album.artist.name}
+            .favorite(data-media-id="#{album.id}" data-media-type='album')
+              =fa_icon 'star'
