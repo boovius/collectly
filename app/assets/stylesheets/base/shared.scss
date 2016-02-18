@@ -53,7 +53,7 @@ a {
 @mixin background-image($width, $height) {
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   width: $width;
   height: $height;
 }
