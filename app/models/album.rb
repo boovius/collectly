@@ -4,4 +4,8 @@ class Album < ActiveRecord::Base
 
   has_many   :songs
   belongs_to :artist
+
+  def image_path
+    url = image_url.blank? ? '/images/album-placeholder.png' : image_url
+  end
 end
