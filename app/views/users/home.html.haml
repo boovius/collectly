@@ -1,13 +1,34 @@
 #user-home
   .container
     %h1 Welcome #{current_user.name}
-    %ul
-      %li
+    .add_new_item
+      %h3 Add new song
+      %form(action='songs' method="post")
+        %input(type="hidden" name="#{request_forgery_protection_token.to_s}" value="#{form_authenticity_token}")
+        %label song
+        %input(type='text' name='song' required='true')
+        %label album
+        %input(type='text' name='album')
+        %label artist
+        %input(type='text' name='artist')
+        %button submit
+    .collection
+      %h3 Your Collection
+      .artists
         %a.btn(href='/artists')
           Artists
-      %li
+        %ul.artists
+          - @artists.each do |artist|
+            %li #{artist.name}
+      .albums
         %a.btn(href='/albums')
           Albums
-      %li
+        %ul.albums
+          - @albums.each do |album|
+            %li #{album.title}
+      .songs
         %a.btn(href='/songs')
           Songs
+        %ul.songs
+          - @songs.each do |song|
+            %li #{song.title}

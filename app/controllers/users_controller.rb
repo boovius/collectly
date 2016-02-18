@@ -15,6 +15,9 @@ class UsersController < ApplicationController
   end
 
   def home
+    @artists = Artist.all
+    @albums = Album.all
+    @songs = Song.all
   end
 
   private
