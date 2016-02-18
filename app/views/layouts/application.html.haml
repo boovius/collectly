@@ -7,4 +7,23 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    %nav.clearfix
+      .login
+        - if current_user.blank?
+          %a.btn(href='/login')
+            Login
+        - else
+          %a.btn(href='/logout')
+            Logout: #{current_user.name}
+      .nav
+        %ul
+          %li
+            %a.btn(href='/artists')
+              artists
+          %li
+            %a.btn(href='/albums')
+              albums
+          %li
+            %a.btn(href='/songs')
+              songs
     = yield
