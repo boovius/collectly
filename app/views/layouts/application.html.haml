@@ -13,17 +13,17 @@
           %a.btn(href='/login')
             Login
         - else
-          %a.btn(href='/logout')
+          %a.nav-link(href='/logout')
             Logout: #{current_user.name}
-      .nav
+      .nav.clearfix
         %ul
           %li
-            %a.btn(href='/artists')
+            %a.nav-link(href='/artists')
               artists
           %li
-            %a.btn(href='/albums')
+            %a.nav-link(href='/albums')
               albums
           %li
-            %a.btn(href='/songs')
+            %a.nav-link(href='/songs')
               songs
     = yield
