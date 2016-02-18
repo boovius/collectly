@@ -1,9 +1,9 @@
 class SongsController < ApplicationController
   def create
     if CollectionService.add_song(song_params)
-      redirect back
+      redirect_to :back
     else
-      redirect back
+      redirect_to :back
     end
   end
 
