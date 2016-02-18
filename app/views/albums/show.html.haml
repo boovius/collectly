@@ -1,0 +1,8 @@
+#albums-show.container
+  %h3 #{@album.title}
+  %h4 #{@album.artist.name}
+  .album(style="background-image: url('#{@album.image_path}')")
+    %ol
+      - @album.songs.each do |song|
+        %li #{song.title}
+

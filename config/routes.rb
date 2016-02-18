@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
   post '/songs' => 'songs#create'
-  get '/artists' => 'artists#index'
+
+  get '/artists'     => 'artists#index'
   get '/artists/:id' => 'artists#show'
+  get '/albums'      => 'albums#index'
+  get '/albums/:id'  => 'albums#show'
 end

@@ -1,0 +1,11 @@
+#albums-index
+  .container
+    %h2 Albums
+    %ul
+      - @albums.each do |album|
+        %a(href="albums/#{album.id}")
+          %li
+            .album-title #{album.title}
+            .artist
+              %span artist:
+              #{album.artist.name}

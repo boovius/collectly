@@ -1,0 +1,11 @@
+#albums-show {
+  .album {
+    width: 60%;
+    height: 500px;
+    overflow: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    box-shadow: 1px 1px 10px gray;
+  }
+}
