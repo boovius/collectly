@@ -1,7 +1,9 @@
 #albums-show {
   .artist-name {
-    padding-left: .5em;
+    padding: 0 .5em;
     cursor: pointer;
+    display: inline-block;
+    border-radius: 5px;
   }
 
   .artist-name:hover {

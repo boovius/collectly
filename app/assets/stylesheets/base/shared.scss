@@ -1,3 +1,9 @@
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
 .container {
   width: 60%;
   margin: auto;
@@ -17,6 +23,11 @@ ul {
   border: 1px solid #ccc;
   text-decoration: none;
   color: black;
+}
+
+.btn-dark {
+  background-color: black;
+  color: white;
 }
 
 a {
@@ -42,7 +53,7 @@ a {
 @mixin background-image($width, $height) {
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   width: $width;
   height: $height;
 }

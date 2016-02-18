@@ -1,38 +1,36 @@
-#user-home
-  .container
-    %h1 Welcome #{current_user.name}
-    .add-new-item
-      %h3 Add new song
-      %form(action='songs' method="post")
-        .names
-          %input(type="hidden" name="#{request_forgery_protection_token.to_s}" value="#{form_authenticity_token}")
-          %label(for='song') song
-          %input(type='text' name='song' id='song' required='true')
-          %label(for='album') album
-          %input(type='text' name='album' id='album')
-          %label(for='artist') artist
-          %input(type='text' name='artist' id='artist')
-        .attrs
-          %label(for='album-image-url') add album artwork
-          %input(type='text' name='album_image_url' id='album-image-url' placeholder='http://www.pathtoimage.com')
-        %button submit
-    .collection
-      %h3 Your Collection
-      .artists
-        %a.btn(href='/artists')
-          Artists
-        %ul.artists
-          - @artists.each do |artist|
-            %li #{artist.name}
-      .albums
-        %a.btn(href='/albums')
-          Albums
-        %ul.albums
-          - @albums.each do |album|
-            %li #{album.title}
-      .songs
-        %a.btn(href='/songs')
-          Songs
-        %ul.songs
-          - @songs.each do |song|
-            %li #{song.title}
+#user-home.container
+  .add-new-item
+    %h3 Add new song
+    %form(action='songs' method="post")
+      .names
+        %input(type="hidden" name="#{request_forgery_protection_token.to_s}" value="#{form_authenticity_token}")
+        %label(for='song') song
+        %input(type='text' name='song' id='song' required='true')
+        %label(for='album') album
+        %input(type='text' name='album' id='album')
+        %label(for='artist') artist
+        %input(type='text' name='artist' id='artist')
+      .attrs
+        %label(for='album-image-url') add album artwork
+        %input(type='text' name='album_image_url' id='album-image-url' placeholder='http://www.pathtoimage.com')
+      %button submit
+  .collection
+    %h3 Your Collection
+    .artists
+      %a.btn(href='/artists')
+        Artists
+      %ul.artists
+        - @artists.each do |artist|
+          %li #{artist.name}
+    .albums
+      %a.btn(href='/albums')
+        Albums
+      %ul.albums
+        - @albums.each do |album|
+          %li #{album.title}
+    .songs
+      %a.btn(href='/songs')
+        Songs
+      %ul.songs
+        - @songs.each do |song|
+          %li #{song.title}

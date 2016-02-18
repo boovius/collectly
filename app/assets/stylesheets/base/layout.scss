@@ -1,0 +1,39 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+nav {
+  background-color: black;
+
+  div {
+    float: right;
+  }
+
+  .nav-link {
+    background-color: black;
+    color: white;
+    padding: 1.5em;
+    display: inline-block;
+    border-left: 1px solid #222;
+  }
+
+  .nav-link:hover {
+    background-color: lighten(black, 10%);
+    color: darken(white, 10%);
+  }
+
+  .title {
+    float: left;
+    border-right: 1px solid #222;
+  }
+
+  .nav {
+    ul {
+      margin-top: 0;
+    }
+
+    li {
+      float: right;
+    }
+  }
+}
