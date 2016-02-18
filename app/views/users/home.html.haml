@@ -12,13 +12,23 @@
         %label artist
         %input(type='text' name='artist')
         %button submit
-    %ul
-      %li
+    .collection
+      .artists
         %a.btn(href='/artists')
           Artists
-      %li
+        %ul.artists
+          - @artists.each do |artist|
+            %li #{artist.name}
+      .albums
         %a.btn(href='/albums')
           Albums
-      %li
+        %ul.albums
+          - @albums.each do |album|
+            %li #{album.name}
+      .songs
         %a.btn(href='/songs')
           Songs
+        %ul.songs
+          - @songs.each do |song|
+            %li #{song.title}
+      %li
