@@ -1,9 +1,7 @@
 #artists-index {
   @include box-shadow-li(goldenrod);
   .album {
-    @include background-image;
-    height: 30px;
-    width: 30px;
+    @include background-image(30px, 30px);
     display: inline-block;
   }
 
