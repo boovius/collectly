@@ -8,6 +8,9 @@
     = csrf_meta_tags
   %body
     %nav.clearfix
+      .title
+        %a.nav-link(href='/')
+          COLLECTLY
       - if current_user.present?
         .login
           %a.nav-link(href='/logout')
@@ -24,7 +27,12 @@
               %a.nav-link(href='/songs')
                 songs
       - else
-        .login
-          %a.nav-link(href='/login')
-            Login
+        - if current_page?(:controller => 'sessions', :action => 'login')
+          .login
+            %a.nav-link(href='/signup')
+              Sign Up
+        - if current_page?(:controller => 'users', :action => 'new')
+          .login
+            %a.nav-link(href='/login')
+              Login
     = yield
