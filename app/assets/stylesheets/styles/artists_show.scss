@@ -1,3 +1,6 @@
 #artists-show {
   @include box-shadow-li(green);
+  .album-image {
+    @include background-image(50px, 50px);
+  }
 }

@@ -2,7 +2,7 @@
   %h3 Your albums from #{@artist.name}
   %ul
     - @artist.albums.each do |album|
-      %a(href="/albums/#{album.id}")
-        %li.box-shadow-li #{album.title}
-
-
+      %a.album(href="/albums/#{album.id}")
+        %li
+          .album-image(style="background-image: url('#{album.image_path}')")
+          .album-title #{album.title}
