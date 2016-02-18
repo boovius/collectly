@@ -8,22 +8,23 @@
     = csrf_meta_tags
   %body
     %nav.clearfix
-      .login
-        - if current_user.blank?
-          %a.btn(href='/login')
-            Login
-        - else
+      - if current_user.present?
+        .login
           %a.nav-link(href='/logout')
             Logout: #{current_user.name}
-      .nav.clearfix
-        %ul
-          %li
-            %a.nav-link(href='/artists')
-              artists
-          %li
-            %a.nav-link(href='/albums')
-              albums
-          %li
-            %a.nav-link(href='/songs')
-              songs
+        .nav.clearfix
+          %ul
+            %li
+              %a.nav-link(href='/artists')
+                artists
+            %li
+              %a.nav-link(href='/albums')
+                albums
+            %li
+              %a.nav-link(href='/songs')
+                songs
+      - else
+        .login
+          %a.nav-link(href='/login')
+            Login
     = yield
