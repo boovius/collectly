@@ -1,0 +1,15 @@
+#albums-index {
+  @include box-shadow-li(red);
+
+  .album-title {
+    font-weight: bold;
+  }
+
+  .artist {
+    font-size: .5em;
+
+    span {
+      font-weight: bold;
+    }
+  }
+}
