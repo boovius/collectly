@@ -12,7 +12,7 @@ RSpec.describe CollectionService do
       }}
 
       it 'adds the song' do
-        subject
+        expect(subject).to eq true
 
         expect(Song.all.length).to eq 1
         expect(Song.first.title).to eq(hash[:song])
@@ -25,7 +25,7 @@ RSpec.describe CollectionService do
         end
 
         it 'does not add the duplicate song' do
-          subject
+          expect(subject).to eq false
 
           expect(Song.all.length).to eq 1
         end
@@ -86,7 +86,6 @@ RSpec.describe CollectionService do
     end
 
     context 'given a hash with a song, ablum, and artist' do
-
       let(:hash) {{
         song: 'Across the Universe',
         album: 'let it be',
