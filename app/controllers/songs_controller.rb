@@ -1,4 +1,8 @@
 class SongsController < ApplicationController
+  def index
+    @songs = Song.all
+  end
+
   def create
     if CollectionService.add_song(song_params)
       redirect_to :back

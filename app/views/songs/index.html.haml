@@ -1,0 +1,17 @@
+#songs-index.container
+  %h2 Songs
+  %ul
+    - @songs.each do |song|
+      %li
+        .song-attrs
+          - if song.album.present?
+            .art(style="background-image: url('#{song.album.image_path}')")
+          %h4 #{song.title}
+        - if song.album.present?
+          .relations.album
+            %span album:
+            %a(href="albums/#{song.album.id}") #{song.album.title}
+        - if song.artist.present?
+          .relations.artist
+            %span artist:
+            %a(href="artists/#{song.artist.id}") #{song.artist.name}

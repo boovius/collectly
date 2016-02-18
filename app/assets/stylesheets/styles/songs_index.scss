@@ -1,0 +1,27 @@
+#songs-index {
+  @include box-shadow-li(blue, false);
+
+  li {
+    cursor: default;
+  }
+
+  .song-attrs * {
+    display: inline-block;
+  }
+
+  .song-attrs {
+    .art {
+      @include background-image(30px, 30px);
+    }
+    h4 {
+      vertical-align: super;
+    }
+  }
+
+  .relations {
+    font-size: .7em;
+    span {
+      font-size: .5em;
+    }
+  }
+}
