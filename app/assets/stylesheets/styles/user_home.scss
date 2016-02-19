@@ -1,26 +1,11 @@
 #user-home {
-  .add-new-item {
-    font-size: 18px;
-
-    background-color: #777;
-    padding: 20px;
-    border-radius: 4px;
-
-    h3 {
-      margin-top: 0;
-    }
-
-    form div {
-      margin-bottom: .5em;
-    }
-
-    #album-image-url {
-      width: 50%;
-    }
-  }
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 20px;
 
   .search {
-    margin-top: 1em;
+    float: left;
+    width: 60%;
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
     padding: 1em 0;
@@ -30,6 +15,7 @@
     padding-top: 1em;
 
     div {
+      display: none;
       float: left;
       margin-left: .2em;
       width: 30%;
@@ -52,14 +38,33 @@
     }
   }
 
-  .btn:hover {
-    color: #eee;
-    background-color: #444;
-  }
-
-  .collection > div {
-    display: inline-block;
+  .add-new-item {
+    margin-left: 1em;
+    float: left;
     width: 30%;
+    font-size: 18px;
+
+    background-color: #777;
+    padding: 20px;
+    border-radius: 4px;
+
+    h3 {
+      margin-top: 0;
+    }
+
+    form div {
+      margin-bottom: .5em;
+    }
+
+    .names {
+      input {
+        float: right;
+      }
+    }
+
+    #album-image-url {
+      width: 90%;
+    }
   }
 }
 

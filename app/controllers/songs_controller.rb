@@ -3,6 +3,10 @@ class SongsController < ApplicationController
     @songs = Song.where(user: current_user)
   end
 
+  def show
+    @song = Song.find(params[:id])
+  end
+
   def create
     if CollectionService.add_song(song_params, current_user)
       flash[:success] = 'song added successfully!'

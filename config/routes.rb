@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   get '/albums'      => 'albums#index'
   get '/albums/:id'  => 'albums#show'
   get '/songs'       => 'songs#index'
+  get '/songs/:id'   => 'songs#show'
 end
