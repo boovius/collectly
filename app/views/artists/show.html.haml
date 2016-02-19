@@ -3,6 +3,10 @@
   %ul
     - @artist.albums.each do |album|
       %a.album(href="/albums/#{album.id}")
-        %li
-          .album-image(style="background-image: url('#{album.image_path}')")
-          .album-title #{album.title}
+        %li.clearfix
+          .album-info
+            .album-image(style="background-image: url('#{album.image_path}')")
+            .album-title #{album.title}
+          .favorite(data-media-id="#{album.id}" data-media-type='album')
+            - album.favorite? ? gold = 'gold' : gold = ''
+            %i.fa.fa-star(class="#{gold}")
