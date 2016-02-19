@@ -3,7 +3,6 @@ $(document).ready(function(){
     var query = $('#query').val();
 
     $.get('/search', {query: query}, function(data){
-      console.log(data);
       var resultsContainer = $('.search-results');
 
       var dataKeys = Object.keys(data);
