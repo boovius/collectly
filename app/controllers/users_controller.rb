@@ -10,6 +10,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/'
     else
+      flash[:alert] = 'please try again, make sure passwords match'
       redirect_to '/signup'
     end
   end
