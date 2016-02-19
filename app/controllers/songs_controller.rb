@@ -5,8 +5,10 @@ class SongsController < ApplicationController
 
   def create
     if CollectionService.add_song(song_params)
+      flash[:notice] = 'song added successfully!'
       redirect_to :back
     else
+      flash[:error] = 'unable to add song'
       redirect_to :back
     end
   end
