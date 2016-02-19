@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160219001832) do
+ActiveRecord::Schema.define(version: 20160219202759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20160219001832) do
     t.datetime "updated_at", null: false
     t.string   "image_url"
     t.boolean  "favorite"
+    t.integer  "user_id"
   end
 
   create_table "artists", force: :cascade do |t|
@@ -30,6 +31,12 @@ ActiveRecord::Schema.define(version: 20160219001832) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean  "favorite"
+    t.integer  "user_id"
+  end
+
+  create_table "favorite_songs", force: :cascade do |t|
+    t.integer "song_id"
+    t.integer "user_id"
   end
 
   create_table "songs", force: :cascade do |t|
@@ -38,6 +45,22 @@ ActiveRecord::Schema.define(version: 20160219001832) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean  "favorite"
+    t.integer  "user_id"
+  end
+
+  create_table "user_favorite_albums", force: :cascade do |t|
+    t.integer "album_id"
+    t.integer "user_id"
+  end
+
+  create_table "user_favorite_artists", force: :cascade do |t|
+    t.integer "artist_id"
+    t.integer "user_id"
+  end
+
+  create_table "user_favorite_songs", force: :cascade do |t|
+    t.integer "song_id"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

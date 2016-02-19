@@ -1,10 +1,10 @@
 class SongsController < ApplicationController
   def index
-    @songs = Song.all
+    @songs = Song.where(user: current_user)
   end
 
   def create
-    if CollectionService.add_song(song_params)
+    if CollectionService.add_song(song_params, current_user)
       flash[:success] = 'song added successfully!'
       redirect_to :back
     else
