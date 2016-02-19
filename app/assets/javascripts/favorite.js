@@ -23,7 +23,7 @@ $(document).ready(function(){
         $(that).find('i').css('color', data.color);
       },
       error: function(data){
-        alert('sorry favorite did not update');
+        toastr.error('sorry favorite did not update');
       },
       dataType: 'json',
     })
