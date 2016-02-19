@@ -10,5 +10,5 @@
               .album-title #{album.title}
               .artist #{album.artist.name}
             .favorite(data-media-id="#{album.id}" data-media-type='album')
-              - album.favorite? ? color = 'gold' : color = 'black'
-              %i.fa.fa-star(style="color: #{color}")
+              - album.favorite? ? gold = 'gold' : gold = ''
+              %i.fa.fa-star(class="#{gold}")
