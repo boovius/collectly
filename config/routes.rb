@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  post '/songs' => 'songs#create'
+  get '/search'     => 'collection#search'
+  post '/songs'     => 'songs#create'
   post '/favorites' => 'favorites#create'
 
   get '/artists'     => 'artists#index'
