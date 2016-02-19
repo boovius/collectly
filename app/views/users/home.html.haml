@@ -1,31 +1,35 @@
-#user-home.container
+#user-home
+  .search
+    .search-input
+      %form
+        %label(for='query') Search
+        %input(type='text' id='query')
+        %input(type='submit' id='query-submit')
+    .search-results.clearfix
+      .artists
+        Artists
+        %ul
+      .albums
+        Albums
+        %ul
+      .songs
+        Songs
+        %ul
   .add-new-item
     %h3 Add new song
     %form(action='songs' method="post")
       .names
         %input(type="hidden" name="#{request_forgery_protection_token.to_s}" value="#{form_authenticity_token}")
-        %label(for='song') song
-        %input(type='text' name='song' id='song' required='true')
-        %label(for='album') album
-        %input(type='text' name='album' id='album')
-        %label(for='artist') artist
-        %input(type='text' name='artist' id='artist')
+        .song-input
+          %label(for='song') song
+          %input(type='text' name='song' id='song' required='true')
+        .album-input
+          %label(for='album') album
+          %input(type='text' name='album' id='album')
+        .artist-input
+          %label(for='artist') artist
+          %input(type='text' name='artist' id='artist')
       .attrs
         %label(for='album-image-url') add album artwork
         %input(type='text' name='album_image_url' id='album-image-url' placeholder='http://www.pathtoimage.com')
       %button submit
-  .search
-    %form
-      %label(for='query') Search
-      %input(type='text' id='query')
-      %input(type='submit' id='query-submit')
-  .search-results.clearfix
-    .artists
-      Artists
-      %ul
-    .albums
-      Albums
-      %ul
-    .songs
-      Songs
-      %ul
