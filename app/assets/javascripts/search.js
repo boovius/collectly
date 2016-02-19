@@ -1,5 +1,6 @@
 $(document).ready(function(){
-  $('#query-submit').click(function(){
+  $('#query-submit').click(function(e){
+    e.preventDefault();
     var query = $('#query').val();
     var resultsContainer = $('.search-results');
     removeStaleResults(resultsContainer);

@@ -15,9 +15,10 @@
         %input(type='text' name='album_image_url' id='album-image-url' placeholder='http://www.pathtoimage.com')
       %button submit
   .search
-    %label(for='query') Search
-    %input(type='text' id='query')
-    %input(type='submit' id='query-submit')
+    %form
+      %label(for='query') Search
+      %input(type='text' id='query')
+      %input(type='submit' id='query-submit')
   .search-results.clearfix
     .artists
       Artists
