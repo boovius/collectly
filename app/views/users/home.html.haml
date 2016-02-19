@@ -18,7 +18,7 @@
     %label(for='query') Search
     %input(type='text' id='query')
     %input(type='submit' id='query-submit')
-  .search-results
+  .search-results.clearfix
     .artists
       Artists
       %ul
@@ -28,23 +28,3 @@
     .songs
       Songs
       %ul
-  .collection
-    %h3 Your Collection
-    .artists
-      %a.btn(href='/artists')
-        Artists
-      %ul.artists
-        - @artists.each do |artist|
-          %li #{artist.name}
-    .albums
-      %a.btn(href='/albums')
-        Albums
-      %ul.albums
-        - @albums.each do |album|
-          %li #{album.title}
-    .songs
-      %a.btn(href='/songs')
-        Songs
-      %ul.songs
-        - @songs.each do |song|
-          %li #{song.title}

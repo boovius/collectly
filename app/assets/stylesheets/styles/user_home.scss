@@ -26,6 +26,16 @@
     padding: 1em 0;
   }
 
+  .search-results {
+    margin-top: 1em;
+
+    div {
+      float: left;
+      margin-left: .2em;
+      width: 30%;
+    }
+  }
+
   ul {
     padding-left: 0;
   }
