@@ -1,24 +1,26 @@
 $(document).ready(function(){
   $('.favorite').click(function(e){
     e.preventDefault();
+    console.log('clicked');
+
     var mediaType = $(this).data('media-type');
     var mediaId = $(this).data('media-id');
-    console.log('clicked');
-    console.log(mediaType);
-    console.log(mediaId);
 
     var postData = {
       mediaType: mediaType,
       mediaId: mediaId
     }
 
+    var that = this;
     $.ajax({
       type: 'POST',
       url: '/favorites',
       data: postData,
       success: function(data){
-        console.log('success!!');
-        console.log(data);
+        $(that).css('color', data.color);
+      },
+      error: function(data){
+        alert('sorry favorite did not update');
       },
       dataType: 'json',
     })
