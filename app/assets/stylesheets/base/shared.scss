@@ -63,3 +63,12 @@ a {
   width: $width;
   height: $height;
 }
+
+.favorite {
+  float: right;
+  cursor: pointer;
+}
+
+.gold {
+  color: gold;
+}

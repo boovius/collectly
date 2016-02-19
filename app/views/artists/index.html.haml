@@ -4,9 +4,13 @@
     %ul
       - @artists.each do |artist|
         %a(href="artists/#{artist.id}")
-          %li
-            .artist-name #{artist.name}
-            .albums
-              - artist.albums.first(10).each do |album|
-                %a(href="/albums/#{album.id}")
-                  .album(style="background-image: url('#{album.image_path}')")
+          %li.clearfix
+            .artist-container
+              .artist-name #{artist.name}
+              .albums
+                - artist.albums.first(10).each do |album|
+                  %a(href="/albums/#{album.id}")
+                    .album(style="background-image: url('#{album.image_path}')")
+            .favorite(data-media-id="#{artist.id}" data-media-type='artist')
+              - artist.favorite? ? gold = 'gold' : gold = ''
+              %i.fa.fa-star(class="#{gold}")

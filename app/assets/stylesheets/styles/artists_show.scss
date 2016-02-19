@@ -1,7 +1,11 @@
 #artists-show {
   @include box-shadow-li(green);
-  .album li div {
-    display: inline-block;
+  .album-info {
+    float: left;
+
+    div {
+      display: inline-block;
+    }
   }
 
   .album-image {
