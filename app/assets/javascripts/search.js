@@ -3,6 +3,7 @@ $(document).ready(function(){
     var query = $('#query').val();
 
     $.get('/search', {query: query}, function(data){
+      console.log(data);
       var resultsContainer = $('.search-results');
 
       var dataKeys = Object.keys(data);
@@ -18,7 +19,9 @@ $(document).ready(function(){
         }
 
         for(var j = 0; j<results.length;j++){
-          $(mediaContainer).append('<li>'+results[j][accessor]+'</li>');
+          var html = '<li><a href=/' + dataKeys[i] + '/' + results[j].id;
+          html += '>' +results[j][accessor]+'</a></li>';
+          $(mediaContainer).append(html);
         }
       }
     });
