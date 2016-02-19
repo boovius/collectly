@@ -1,4 +1,8 @@
 $(document).ready(function(){
+  $('.favorite').hover(function(){
+    $(this).find('i').toggleClass('gold');
+  });
+
   $('.favorite').click(function(e){
     e.preventDefault();
 
