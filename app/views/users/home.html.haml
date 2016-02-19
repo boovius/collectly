@@ -14,23 +14,18 @@
         %label(for='album-image-url') add album artwork
         %input(type='text' name='album_image_url' id='album-image-url' placeholder='http://www.pathtoimage.com')
       %button submit
-  .collection
-    %h3 Your Collection
+  .search
+    %form
+      %label(for='query') Search
+      %input(type='text' id='query')
+      %input(type='submit' id='query-submit')
+  .search-results.clearfix
     .artists
-      %a.btn(href='/artists')
-        Artists
-      %ul.artists
-        - @artists.each do |artist|
-          %li #{artist.name}
+      Artists
+      %ul
     .albums
-      %a.btn(href='/albums')
-        Albums
-      %ul.albums
-        - @albums.each do |album|
-          %li #{album.title}
+      Albums
+      %ul
     .songs
-      %a.btn(href='/songs')
-        Songs
-      %ul.songs
-        - @songs.each do |song|
-          %li #{song.title}
+      Songs
+      %ul
