@@ -5,7 +5,7 @@ class SongsController < ApplicationController
 
   def create
     if CollectionService.add_song(song_params)
-      flash[:notice] = 'song added successfully!'
+      flash[:success] = 'song added successfully!'
       redirect_to :back
     else
       flash[:error] = 'unable to add song'
