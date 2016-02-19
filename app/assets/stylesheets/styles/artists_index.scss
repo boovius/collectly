@@ -1,5 +1,10 @@
 #artists-index {
   @include box-shadow-li(goldenrod);
+
+  .artist-container {
+    float: left;
+  }
+
   .album {
     @include background-image(30px, 30px);
     display: inline-block;
