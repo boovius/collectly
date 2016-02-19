@@ -17,10 +17,10 @@ class SongsController < ApplicationController
 
   def song_params
     {
-      song: params['song'],
-      album: params['album'],
-      artist: params['artist'],
-      album_image_url: params['album_image_url'],
+      song: params['song'].strip,
+      album: params['album'].strip,
+      artist: params['artist'].strip,
+      album_image_url: params['album_image_url'].strip,
     }
   end
 end
