@@ -1,7 +1,6 @@
 $(document).ready(function(){
   $('.favorite').click(function(e){
     e.preventDefault();
-    console.log('clicked');
 
     var mediaType = $(this).data('media-type');
     var mediaId = $(this).data('media-id');
@@ -17,7 +16,7 @@ $(document).ready(function(){
       url: '/favorites',
       data: postData,
       success: function(data){
-        $(that).css('color', data.color);
+        $(that).find('i').css('color', data.color);
       },
       error: function(data){
         alert('sorry favorite did not update');
