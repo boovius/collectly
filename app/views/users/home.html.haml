@@ -6,19 +6,19 @@
         %input(type='text' id='query')
         %input(type='submit' id='query-submit')
     .search-results.clearfix
-      .artists
+      .artists(ng-if='artists.length > 0')
         Artists
         %ul
           %li(ng-repeat="artist in artists")
             %a(href="artists/{{artist.id}}")
               {{artist.name}}
-      .albums
+      .albums(ng-if='albums.length > 0')
         Albums
         %ul
           %li(ng-repeat="album in albums")
             %a(href="albums/{{album.id}}")
               {{album.title}}
-      .songs
+      .songs(ng-if='songs.length > 0')
         Songs
         %ul
           %li(ng-repeat="song in songs")
