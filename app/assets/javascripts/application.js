@@ -14,4 +14,4 @@
 //= require jquery_ujs
 //= require toastr
 //= require angular
-//= require_tree .
+//= require search
