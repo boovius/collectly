@@ -1,5 +1,5 @@
-#user-home
-  .search(ng-app='search')
+#user-home(ng-app='search')
+  .search(ng-controller='SearchCtrl')
     .search-input
       %form
         %label(for='query') Search
@@ -9,12 +9,21 @@
       .artists
         Artists
         %ul
+          %li(ng-repeat="artist in artists")
+            %a(href="artists/{{artist.id}}")
+              {{artist.name}}
       .albums
         Albums
         %ul
+          %li(ng-repeat="album in albums")
+            %a(href="albums/{{album.id}}")
+              {{album.title}}
       .songs
         Songs
         %ul
+          %li(ng-repeat="song in songs")
+            %a(href="songs/{{song.id}}")
+              {{song.title}}
   .add-new-item
     %h3 Add new song
     %form(action='songs' method="post")
