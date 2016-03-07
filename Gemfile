@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'normalize-rails'
 gem 'font-awesome-rails'
 gem 'toastr-rails'
+gem 'angularjs-rails'
 
 gem 'bcrypt'
 
