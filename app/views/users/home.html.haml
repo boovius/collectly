@@ -24,6 +24,7 @@
           %li(ng-repeat="song in songs")
             %a(href="songs/{{song.id}}")
               {{song.title}}
+      .no-results-message(ng-if='noResults') no results
   .add-new-item
     %h3 Add new song
     %form(action='songs' method="post")
