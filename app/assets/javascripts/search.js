@@ -17,20 +17,15 @@ search.controller('SearchCtrl', function($scope){
       $scope.$apply();
     });
   });
+
+  function hasNoResults(data){
+    return hasZeroResults(data.artists) &&
+      hasZeroResults(data.albums) &&
+      hasZeroResults(data.songs);
+  }
+
+  function hasZeroResults(array) {
+    return array.length === 0;
+  }
 });
 
-function hasNoResults(data){
-  return noArtists(data) && noAlbums(data) && noSongs(data);
-}
-
-function noArtists(data){
-  return data.artists.length === 0;
-}
-
-function noAlbums(data){
-  return data.albums.length === 0;
-}
-
-function noSongs(data){
-  return data.songs.length === 0;
-}
