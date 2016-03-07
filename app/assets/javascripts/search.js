@@ -1,3 +1,5 @@
+search = angular.module('search', []);
+
 $(document).ready(function(){
   $('#query-submit').click(function(e){
     e.preventDefault();
