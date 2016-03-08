@@ -1,0 +1,50 @@
+<div id='user-home'>
+  <div class='search'>
+    <div class='search-input'>
+      <form>
+        <label for='query'> Search</label>
+        <input type='text' id='query'/>
+        <input type='submit' id='query-submit'/>
+      </form>
+      <div class='search-results clearfix'>
+        <div class='artists'>
+          Artists
+          <ul></ul>
+        </div>
+        <div class='albums'>
+          Albums
+          <ul></ul>
+        </div>
+        <div class='songs'>
+          Songs
+          <ul></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='add-new-item'>
+    <h3>Add new song</h3>
+    <form action='songs' method="post">
+      <div class='names'>
+        <input type="hidden" name="#{request_forgery_protection_token.to_s}" value="#{form_authenticity_token}"/>
+        <div class='song-input'>
+          <label for='song'>song</label>
+          <input type='text' name='song' id='song' required='true'/>
+        </div>
+        <div class='album-input'>
+          <label for='album'>album</label>
+          <input type='text' name='album' id='album'/>
+        </div>
+        <div class='artist-input'>
+          <label for='artist'>artist</label>
+          <input type='text' name='artist' id='artist'/>
+        </div>
+      </div>
+      <div class='attrs'>
+        <label for='album-image-url'>add album artwork</label>
+        <input type='text' name='album_image_url' id='album-image-url' placeholder='http://www.pathtoimage.com'/>
+      </div>
+      <button>submit</button>
+    </form>
+  </div>
+</div>
