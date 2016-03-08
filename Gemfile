@@ -18,6 +18,7 @@ gem 'bcrypt'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
+  gem 'jasmine-rails'
   gem 'rspec-rails'
   gem 'byebug'
   gem 'pry'
