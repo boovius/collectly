@@ -1,6 +1,8 @@
 search = angular.module('search', []);
 
 search.controller('SearchCtrl', function($scope){
+  $scope.foobar = true;
+
   $('#query-submit').click(function(e){
     e.preventDefault();
     $('.search-results div').show();
@@ -12,16 +14,16 @@ search.controller('SearchCtrl', function($scope){
       $scope.albums = data.albums;
       $scope.songs = data.songs;
 
-      $scope.noResults = hasNoResults(data);
+      $scope.noResults = $scope.hasNoResults(data);
 
       $scope.$apply();
     });
   });
-});
 
-function hasNoResults(data){
-  return noArtists(data) && noAlbums(data) && noSongs(data);
-}
+  $scope.hasNoResults = function(data){
+    return noArtists(data) && noAlbums(data) && noSongs(data);
+  }
+});
 
 function noArtists(data){
   return data.artists.length === 0;
