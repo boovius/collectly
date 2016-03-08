@@ -10,7 +10,7 @@ $(document).ready(function(){
     $.get('/search', {query: query}, function(data){
 
       var haveResults = false;
-      data.artists.length > 0 || haveResults === true ? haveResults = true : haveResults = false
+      data.artists.length > 0 ? haveResults = true : haveResults = false
       data.albums.length > 0 || haveResults === true ? haveResults = true : haveResults = false
       data.songs.length > 0 || haveResults === true ? haveResults = true : haveResults = false
       if (!haveResults) {
