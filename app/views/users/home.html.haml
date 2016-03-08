@@ -9,22 +9,30 @@
       .artists(ng-if='artists.length > 0')
         Artists
         %ul
-          %li(ng-repeat="artist in artists")
-            %a(href="artists/{{artist.id}}")
+          %li(ng-repeat="artist in artists" ng-click='addToFolder()')
+            %a(href='#')
               {{artist.name}}
       .albums(ng-if='albums.length > 0')
         Albums
         %ul
-          %li(ng-repeat="album in albums")
-            %a(href="albums/{{album.id}}")
+          %li(ng-repeat="album in albums" ng-click='addToFolder()')
+            %a(href='#')
               {{album.title}}
       .songs(ng-if='songs.length > 0')
         Songs
         %ul
-          %li(ng-repeat="song in songs")
-            %a(href="songs/{{song.id}}")
+          %li(ng-repeat="song in songs" ng-click='addToFolder()')
+            %a(href='#')
               {{song.title}}
-      .no-results-message(ng-if='noResults') no results
+    .results-message {{resultsMessage}}
+    .folder(ng-if='!hasNoResults(folder)')
+      %span(ng-if='folder.artists.length > 0') {{folder.artists.length}} artists,
+      %span(ng-if='folder.albums.length > 0') {{folder.albums.length}} albums,
+      %span(ng-if='folder.songs.length > 0') {{folder.songs.length}} songs,
+      %span
+        in folder -
+        %a(href='/folder') click to go to folder
+    .folder-display(ng-view)
   .add-new-item
     %h3 Add new song
     %form(action='songs' method="post")

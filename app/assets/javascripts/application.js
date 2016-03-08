@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require toastr
 //= require angular
+//= require angular-route
 //= require search
